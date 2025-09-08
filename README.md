@@ -40,14 +40,16 @@ plt.imshow(faceImage[:,:,::-1]);plt.title("Face")
 ```
 glassPNG = cv2.imread('OIP.jpg',-1)
 plt.imshow(glassPNG[:,:,::-1]);plt.title("glassPNG")
-
 ```
+
 <img width="807" height="491" alt="image" src="https://github.com/user-attachments/assets/fdbbed9a-bb8d-4988-bb62-0b8270589c2d" />
+
 ```
 glassPNG = cv2.resize(glassPNG,(190,60))
 print("image Dimension ={}".format(glassPNG.shape))
 image Dimension =(60, 190, 3)
-
+```
+```
 plt.figure(figsize=[15,15])
 plt.subplot(121);plt.imshow(glassBGR[:,:,::-1]);plt.title('Sunglass Color channels');
 plt.subplot(122);plt.imshow(glassMask1,cmap='gray');plt.title('Sunglass Alpha channel');
@@ -67,14 +69,17 @@ maskedEye = cv2.multiply(eyeROI,(1-  glassMask ))
 maskedGlass = cv2.multiply(glassBGR,glassMask)
 
 eyeRoiFinal = cv2.add(maskedEye, maskedGlass)
+```
 
 # Display the intermediate results
+```
 plt.figure(figsize=[20,20])
 plt.subplot(131);plt.imshow(maskedEye[...,::-1]);plt.title("Masked Eye Region")
 plt.subplot(132);plt.imshow(maskedGlass[...,::-1]);plt.title("Masked Sunglass Region")
 plt.subplot(133);plt.imshow(eyeRoiFinal[...,::-1]);plt.title("Augmented Eye and Sunglass")
 ```
 <img width="848" height="161" alt="image" src="https://github.com/user-attachments/assets/a243bbbe-6c71-4899-8061-983a6b17b9dc" />
+
 ```
 import cv2
 import numpy as np
