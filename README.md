@@ -33,14 +33,17 @@ import matplotlib.pyplot as plt
 
 faceImage = cv2.imread('images1.jpg')
 plt.imshow(faceImage[:,:,::-1]);plt.title("Face")
+```
 
-<img width="914" height="727" alt="image" src="https://github.com/user-attachments/assets/17b563da-9018-404a-b8e2-5b56ece6b210" />
+<img width="768" height="726" alt="image" src="https://github.com/user-attachments/assets/0c2ebbcb-723a-49ad-81db-2fd3c026c860" />
 
+```
 glassPNG = cv2.imread('OIP.jpg',-1)
 plt.imshow(glassPNG[:,:,::-1]);plt.title("glassPNG")
 
+```
 <img width="807" height="491" alt="image" src="https://github.com/user-attachments/assets/fdbbed9a-bb8d-4988-bb62-0b8270589c2d" />
-
+```
 glassPNG = cv2.resize(glassPNG,(190,60))
 print("image Dimension ={}".format(glassPNG.shape))
 image Dimension =(60, 190, 3)
@@ -48,9 +51,9 @@ image Dimension =(60, 190, 3)
 plt.figure(figsize=[15,15])
 plt.subplot(121);plt.imshow(glassBGR[:,:,::-1]);plt.title('Sunglass Color channels');
 plt.subplot(122);plt.imshow(glassMask1,cmap='gray');plt.title('Sunglass Alpha channel');
+```
 
-<img width="856" height="176" alt="image" src="https://github.com/user-attachments/assets/0ef7e51c-4653-4321-a561-a5b02b341191" />
-
+```
 glassMask = cv2.merge((glassMask1,glassMask1,glassMask1))
 
 glassMask = np.uint8(glassMask/255)
@@ -70,9 +73,9 @@ plt.figure(figsize=[20,20])
 plt.subplot(131);plt.imshow(maskedEye[...,::-1]);plt.title("Masked Eye Region")
 plt.subplot(132);plt.imshow(maskedGlass[...,::-1]);plt.title("Masked Sunglass Region")
 plt.subplot(133);plt.imshow(eyeRoiFinal[...,::-1]);plt.title("Augmented Eye and Sunglass")
-
+```
 <img width="848" height="161" alt="image" src="https://github.com/user-attachments/assets/a243bbbe-6c71-4899-8061-983a6b17b9dc" />
-
+```
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -109,9 +112,8 @@ else:
     plt.title("Face with Sunglasses")
     plt.axis("off")
     plt.show()
-
+```
 <img width="625" height="812" alt="Untitled" src="https://github.com/user-attachments/assets/4f0b5175-60cb-4133-9e88-4d94ded642a4" />
 
-```
 ### Result:
 Face with sunglasses properly placed
